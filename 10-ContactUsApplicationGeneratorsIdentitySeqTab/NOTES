@@ -1,0 +1,29 @@
+1	2023-12-08 09:50:37.968194	6955151551		vijju@gmail.com	vijay
+2	2023-12-08 09:50:38.033280	9703146257		kiran@gmail.com	kiran
+3	2023-12-08 09:50:38.037083	9564645	2023-12-08 09:53:30.497856	bhannnu@gmail.com	bhannnu
+4	2023-12-08 09:50:38.044900	94894944		chakra@gmail.com	chakra
+52	2023-12-08 09:59:16.463779	6955151551		vijju@gmail.com	vijay
+53	2023-12-08 09:59:16.498777	9703146257		kiran@gmail.com	kiran
+54	2023-12-08 09:59:16.502776	9564645		bhannnu@gmail.com	bhannnu
+55	2023-12-08 09:59:16.507807	94894944		chakra@gmail.com	chakra
+102	2023-12-08 10:00:45.644998	6955151551		vijju@gmail.com	vijay
+103	2023-12-08 10:00:45.683004	9703146257		kiran@gmail.com	kiran
+104	2023-12-08 10:00:45.687007	9564645		bhannnu@gmail.com	bhannnu
+105	2023-12-08 10:00:45.694001	94894944		chakra@gmail.com	chakra
+152	2023-12-08 10:02:34.085323	6955151551		vijju@gmail.com	vijay
+153	2023-12-08 10:02:34.119323	9703146257		kiran@gmail.com	kiran
+154	2023-12-08 10:02:34.122325	9564645		bhannnu@gmail.com	bhannnu
+155	2023-12-08 10:02:34.127325	94894944		chakra@gmail.com	chakra
+
+
+
+WHEN WE USE @GeneratedValue
+===========================
+i am inserting 4 records every time 
+
+Hibernate: select next_val as id_val from contact_us_seq for update
+Hibernate: update contact_us_seq set next_val= ? where next_val=?
+Hibernate: insert into contact_us (phone_no,c_email,c_name,created_date,c_id) values (?,?,?,?,?)
+Hibernate: insert into contact_us (phone_no,c_email,c_name,created_date,c_id) values (?,?,?,?,?)
+Hibernate: insert into contact_us (phone_no,c_email,c_name,created_date,c_id) values (?,?,?,?,?)
+Hibernate: insert into contact_us (phone_no,c_email,c_name,created_date,c_id) values (?,?,?,?,?)

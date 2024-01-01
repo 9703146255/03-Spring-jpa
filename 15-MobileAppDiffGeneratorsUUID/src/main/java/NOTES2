@@ -1,0 +1,79 @@
+
+LAMBOC CONSISTS OF 
+==================
+
+@Data:
+======
+@Getter,
+@Setter,
+@ToString, 
+@EqualsAndHashCode,
+@NoArgsConstructor
+@AllArgsConstructor
+
+As mentioned earlier, combines @Getter, @Setter, @ToString, @EqualsAndHashCode, and @NoArgsConstructor/@AllArgsConstructor. It is a convenient way to generate common methods for a class.
+
+
+
+
+@Getter and @Setter:
+====================
+@Getter generates getter methods for all non-static fields.
+@Setter generates setter methods for all non-final fields.
+
+
+@ToString:
+==========
+Generates a toString() method that includes the class name and the values of all fields.
+
+
+@EqualsAndHashCode:
+==================
+Generates equals() and hashCode() methods based on the fields of the class.
+@NoArgsConstructor and @AllArgsConstructor:
+
+@NoArgsConstructor generates a no-argument constructor.
+@AllArgsConstructor generates a constructor with parameters for all fields in the class.
+
+
+
+@Builder:
+=========
+Generates a builder pattern for the annotated class, allowing for easy and flexible object instantiation.
+
+
+@NoArgsConstructor(force = true):
+================================
+Generates a no-argument constructor even if there are final fields, which is typically not allowed by default.
+
+
+@Value:
+=======
+Similar to @Data but creates an immutable class with final fields. 
+It combines @Getter, @ToString, @EqualsAndHashCode, and @AllArgsConstructor.
+
+@Getter,
+
+@ToString, 
+
+@EqualsAndHashCode, 
+
+@AllArgsConstructor.
+
+
+@Slf4j:
+=======
+Integrates with the Simple Logging Facade for Java (SLF4J) library to automatically generate a logger field in the class.
+
+
+@Cleanup:
+=========
+Automatically closes resources (like streams) by generating a try-with-resources block.
+
+
+@SneakyThrows:
+====================
+Suppresses checked exceptions in the method signature, allowing for unchecked exception handling.
+
+
+

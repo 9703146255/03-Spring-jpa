@@ -1,0 +1,138 @@
+Entity manager methods
+=====================
+// Makes an instance managed and persistent, assigning an identifier.
+====================================================================================
+public void persist(Object entity);
+
+// Merges the state of the given entity into the current persistence context.
+====================================================================================
+public <T> T merge(T entity);
+
+// Removes the entity from the persistence context and the database.
+====================================================================================
+public void remove(Object entity);
+
+// Retrieves an entity by its primary key.
+====================================================================================
+public <T> T find(Class<T> entityClass, Object primaryKey);
+
+// Creates an instance of Query for executing a JPQL query.
+====================================================================================
+public Query createQuery(String qlString);
+
+// Creates an instance of Query for executing a named JPQL query.
+====================================================================================
+public Query createNamedQuery(String name);
+
+// Creates an instance of Query for executing a native SQL query.
+====================================================================================
+public Query createNativeQuery(String sqlString, Class resultClass);
+
+// Synchronizes the persistence context with the underlying database.
+====================================================================================
+public void flush();
+
+
+
+
+
+
+
+
+
+The EntityManager interface provides various methods for managing entities and their persistence in JPA (Java Persistence API). Below are some commonly used methods:
+
+
+
+persist(Object entity):
+=======================
+
+Used to make an instance managed and persistent. It assigns an identifier to the entity and makes it "attached" to the persistence context.
+EntityManager entityManager = // Obtain EntityManager instance
+Employee employee = new Employee(); // Create a new entity
+entityManager.persist(employee); // Persist the entity
+
+
+
+merge(Object entity):
+=======================
+
+Used to merge the state of the given entity into the current persistence context.
+java
+Copy code
+EntityManager entityManager = // Obtain EntityManager instance
+Employee employee = // Retrieve or create an entity
+employee.setEmpName("UpdatedName"); // Modify entity state
+entityManager.merge(employee); // Merge the changes into the persistence context
+
+
+
+
+remove(Object entity):
+=======================
+
+Used to remove the entity from the persistence context and the database.
+EntityManager entityManager = // Obtain EntityManager instance
+Employee employee = // Retrieve or create an entity
+entityManager.remove(employee); // Remove the entity
+find(Class<T> entityClass, Object primaryKey):
+
+Retrieves an entity by its primary key.
+java
+Copy code
+EntityManager entityManager = // Obtain EntityManager instance
+Employee employee = entityManager.find(Employee.class, 1); // Find an entity by primary key
+
+
+
+
+createQuery(String qlString):
+=======================
+Creates an instance of Query for executing a JPQL (Java Persistence Query Language) query.
+
+EntityManager entityManager = // Obtain EntityManager instance
+Query query = entityManager.createQuery("SELECT e FROM Employee e WHERE e.empDept = :dept");
+query.setParameter("dept", "IT");
+List<Employee> employees = query.getResultList();
+
+
+
+createNamedQuery(String name):
+=======================
+
+Creates an instance of Query for executing a named JPQL query.
+
+EntityManager entityManager = // Obtain EntityManager instance
+Query query = entityManager.createNamedQuery("findEmployeeByDept");
+query.setParameter("dept", "IT");
+List<Employee> employees = query.getResultList();
+createNativeQuery(String sqlString):
+==============================================
+
+Creates an instance of Query for executing a native SQL query.
+EntityManager entityManager = // Obtain EntityManager instance
+Query query = entityManager.createNativeQuery("SELECT * FROM emp_table WHERE emp_dept = :dept", Employee.class);
+query.setParameter("dept", "IT");
+List<Employee> employees = query.getResultList();
+
+
+flush():
+
+Synchronizes the persistence context with the underlying database.
+
+EntityManager entityManager = // Obtain EntityManager instance
+// Make changes to managed entities
+entityManager.flush(); // Sync changes with the database
+These are just a few examples of commonly used methods. The EntityManager interface provides additional methods for managing transactions, accessing the underlying provider-specific features, and more. Depending on your use case, you might use different combinations of these methods.
+
+U
+
+
+
+
+
+
+
+
+
+

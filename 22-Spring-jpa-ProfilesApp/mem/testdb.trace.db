@@ -1,0 +1,3 @@
+2023-12-14 09:58:36.004736+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SHOP" not found (this database is empty); SQL statement:
+select s1_0.shop_id,s1_0.shop_no,s1_0.shop_location,s1_0.shop_name from shop s1_0 where (s1_0.shop_id,s1_0.shop_no) in ((?,?)) [42104-224]

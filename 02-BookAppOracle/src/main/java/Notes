@@ -1,0 +1,70 @@
+When we use 
+===================================================
+@GeneratedValue(strategy = GenerationType.SEQUENCE)
+===================================================
+
+Hibernate: create global temporary table HTE_contacts(contact_id number(10,0), rn_ number(10,0) not null, contact_number number(19,0), contact_name varchar2(255 char), primary key (rn_)) on commit delete rows
+
+Hibernate: create sequence contacts_seq start with 1 increment by 50
+
+Hibernate: select c1_0.contact_id,c1_0.contact_name,c1_0.contact_number from contacts c1_0 where c1_0.contact_id=?
+
+
+===================================================
+@GeneratedValue(strategy = GenerationType.AUTO)
+===================================================
+create global temporary table HTE_contacts(contact_id number(10,0), rn_ number(10,0) not null, contact_number number(19,0), contact_name varchar2(255 char), primary key (rn_)) on commit delete rows
+
+Hibernate: select c1_0.contact_id,c1_0.contact_name,c1_0.contact_number from contacts c1_0 where c1_0.contact_id=?
+
+===================================================
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+===================================================
+
+Hibernate: select c1_0.contact_id,c1_0.contact_name,c1_0.contact_number from contacts c1_0 where c1_0.contact_id=?
+
+
+===================================================
+@GeneratedValue(strategy = GenerationType.TABLE)
+===================================================
+
+Hibernate: create table hibernate_sequences (sequence_name varchar2(255 char) not null, next_val number(19,0), primary key (sequence_name))
+Hibernate: insert into hibernate_sequences(sequence_name, next_val) values ('default',0)
+Hibernate: select c1_0.contact_id,c1_0.contact_name,c1_0.contact_number from contacts c1_0 where c1_0.contact_id=?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+==============================
+My oracle datasource properties
+===============================
+spring.datasource.url=jdbc:oracle:thin:@DESKTOP-UMHHVSE:1521/XE
+
+spring.datasource.username=system
+
+spring.datasource.password=manager
+
+spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
+
+spring.jpa.hibernate.ddl-auto=update
+
+spring.jpa.show-sql=true
+
+
+
+
+spring.datasource.url=jdbc:oracle:thin:@DESKTOP-UMHHVSE:1521/XE
+==============================================================
+we need to search in tnsnames.ora in ==> c/oraclexe/ search here[tnnames.ora] ==> open pdf and see deatails

@@ -1,0 +1,22 @@
+package in.thiru.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Vegetables {
+	@Id
+	@GeneratedValue
+	private Integer vegetableId;
+	private String vegetableName;
+	private String vegetableLoc;
+	private Double vagetablePrice;
+
+}

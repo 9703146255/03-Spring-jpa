@@ -1,0 +1,24 @@
+BookRepository[Interface]
+========================
+
+
+		BookRepository bean = run.getBean(BookRepository.class); ==> jdk.proxy2.$Proxy88
+	
+	==>implementation provided by interface implementation class object that is PROXY CLASS OBJECT[IN Data jpa]
+
+	==> Internally it uses proxy design pattern
+	
+	
+	 @GeneratedValue(strategy = GenerationType.AUTO)
+	 ===============================================
+	 If don't mention these we need to pass manually
+	 
+	 
+	 ctrl+shift+r --> to search perticuarl[class/interface/abstract class]
+ctrl+shift+t  --> jar files we can open[class/interface/abstract class]
+ctrl+shift+p  -->jumped to closed phrase{  -->}
+cntl+shift+enter --> to add one new line
+cntl+q --> previosly edited place(quit to previosly edited place)
+alt+shift+z --> try catch ==> first we need to select
+r-click -> refactor (extrator) ==> it will create seperate method for that
+alt+shift+r  ==> it will refactor many places [if we changed one place]

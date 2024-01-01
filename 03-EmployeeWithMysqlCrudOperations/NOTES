@@ -1,0 +1,24 @@
+CrudRepository methods
+========================
+save(S entity)								: Save or update an entity.
+
+saveAll(Iterable<S> entities)				: Save or update multiple entities.
+
+findById(ID id)								: Find an entity by its ID.
+
+existsById(ID id)							: Check if an entity with a given ID exists.
+
+findAll()									: Get all entities.
+
+findAllById(Iterable<ID> ids)				: Get a list of entities by their IDs.
+
+count()										: Get the number of entities.
+
+deleteById(ID id)							: Delete an entity by its ID.
+
+delete(T entity)							: Delete a specific entity.
+
+deleteAll(Iterable<? extends T> entities)	: Delete multiple entities.
+
+deleteAll()									: Delete all entities.
+

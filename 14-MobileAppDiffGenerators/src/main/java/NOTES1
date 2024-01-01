@@ -1,0 +1,101 @@
+	@Id
+	@GeneratedValue
+	private Integer mobileId;
+	==========================================================
+	
+
+Hibernate: drop table if exists mobile
+Hibernate: drop table if exists mobile_seq
+Hibernate: create table mobile (mobile_id integer not null, mobile_price float(53), mobile_name varchar(255), mobile_shop varchar(255), primary key (mobile_id)) engine=InnoDB
+Hibernate: create table mobile_seq (next_val bigint) engine=InnoDB
+Hibernate: insert into mobile_seq values ( 1 )
+           
+    
+Hibernate: select next_val as id_val from mobile_seq for update
+Hibernate: update mobile_seq set next_val= ? where next_val=?
+Hibernate: insert into mobile (mobile_name,mobile_price,mobile_shop,mobile_id) values (?,?,?,?)
+
+===========================================================================================
+METHOD-01[@GeneratedValue]
+===========================================================================================
+It will create Separate PK for table
+====================================
+  	==> DROP MOBILE TABLE
+  	==> DROP SEQ_TABLE
+  
+  	==> CREATE MOBILE TABLE
+  	==> CREATE SEQ TABLE
+  
+  	==> INSERT VALUE IN SEQ
+==========================
+ 	==> SELECT FOR NEXT VALUE TO UPDATE FROM SEQ  => 1
+	==>UPDATE SET=1+1(SET NEXT VALUE)
+	==> INSERT INTO TABLE
+===========================
+
+==============
+Table Creation:
+===============
+Hibernate: create table mobile (mobile_id integer not null, mobile_price float(53), mobile_name varchar(255), mobile_shop varchar(255), primary key (mobile_id)) engine=InnoDB
+Hibernate: create table mobile_seq (next_val bigint) engine=InnoDB
+
+
+
+create table mobile1 (mobile_id integer not null, mobile_price float(53), mobile_name varchar(255), mobile_shop varchar(255), primary key (mobile_id));
+
+create table mobile_seq1 (next_val bigint);
+
+
+
+=======================
+Insert into mobile_seq:
+=======================
+Hibernate: insert into mobile_seq values ( 1 )
+
+
+------------------------------------
+insert into mobile_seq1 values ( 1 )
+------------------------------------
+===================
+Sequence Generation:
+===================
+Hibernate: select next_val as id_val from mobile_seq 			for update
+Hibernate: update mobile_seq set next_val= ? where next_val=?
+
+-----------------
+UPDATE mobile_seq1
+SET next_val = 2
+WHERE next_val = 1;
+-------------------
+UPDATE mobile_seq
+SET next_val = :newNextValue
+WHERE next_val = :currentNextValue;
+------------------------------------
+
+
+
+
+
+========================================================
+	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.TABLE)
+	@GeneratedValue(strategy = GenerationType.AUTO)
+========================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

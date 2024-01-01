@@ -1,0 +1,24 @@
+
+Primary key  : Constraint in database
+
+	=> It is used to maintain unique data in the column
+
+
+
+	Primary Key = Not null + Unique
+	
+	
+	PRIMITIVE DATA TYPES
+	====================
+	==>	IF we don't set the values to the by default it will take default value so can't get any exception 
+	
+	==> our data is not allow default values[in Wrapper classes it will assign default values is  NULL value so our PK is not allows the null values
+	
+	==> PK => UNIQUE + NOT NULL
+	
+	WRAPPER CLASSES
+	===============
+	==>	It will take default values are null values, so null values is not allow by PK
+	
+	==>	PK is unique + not null
+	
